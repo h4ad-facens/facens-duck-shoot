@@ -33,12 +33,12 @@ public class PlayerInputHandler : MonoBehaviour
         m_FireInputWasHeld = GetFireInputHeld();
     }
 
-    public bool CanProcessInput()
+    public virtual bool CanProcessInput()
     {
         return Cursor.lockState == CursorLockMode.Locked && !m_GameFlowManager.gameIsEnding;
     }
 
-    public Vector3 GetMoveInput()
+    public virtual Vector3 GetMoveInput()
     {
         if (CanProcessInput())
         {
@@ -63,7 +63,7 @@ public class PlayerInputHandler : MonoBehaviour
         return GetMouseOrStickLookAxis(GameConstants.k_MouseAxisNameVertical, GameConstants.k_AxisNameJoystickLookVertical);
     }
 
-    public bool GetJumpInputDown()
+    public virtual bool GetJumpInputDown()
     {
         if (CanProcessInput())
         {
@@ -73,7 +73,7 @@ public class PlayerInputHandler : MonoBehaviour
         return false;
     }
 
-    public bool GetJumpInputHeld()
+    public virtual bool GetJumpInputHeld()
     {
         if (CanProcessInput())
         {
@@ -93,7 +93,7 @@ public class PlayerInputHandler : MonoBehaviour
         return !GetFireInputHeld() && m_FireInputWasHeld;
     }
 
-    public bool GetFireInputHeld()
+    public virtual bool GetFireInputHeld()
     {
         if (CanProcessInput())
         {
@@ -111,7 +111,7 @@ public class PlayerInputHandler : MonoBehaviour
         return false;
     }
 
-    public bool GetAimInputHeld()
+    public virtual bool GetAimInputHeld()
     {
         if (CanProcessInput())
         {
@@ -123,7 +123,7 @@ public class PlayerInputHandler : MonoBehaviour
         return false;
     }
 
-    public bool GetSprintInputHeld()
+    public virtual bool GetSprintInputHeld()
     {
         if (CanProcessInput())
         {
@@ -133,7 +133,7 @@ public class PlayerInputHandler : MonoBehaviour
         return false;
     }
 
-    public bool GetCrouchInputDown()
+    public virtual bool GetCrouchInputDown()
     {
         if (CanProcessInput())
         {
@@ -143,7 +143,7 @@ public class PlayerInputHandler : MonoBehaviour
         return false;
     }
 
-    public bool GetCrouchInputReleased()
+    public virtual bool GetCrouchInputReleased()
     {
         if (CanProcessInput())
         {
@@ -153,7 +153,7 @@ public class PlayerInputHandler : MonoBehaviour
         return false;
     }
 
-    public int GetSwitchWeaponInput()
+    public virtual int GetSwitchWeaponInput()
     {
         if (CanProcessInput())
         {
@@ -174,7 +174,7 @@ public class PlayerInputHandler : MonoBehaviour
         return 0;
     }
 
-    public int GetSelectWeaponInput()
+    public virtual int GetSelectWeaponInput()
     {
         if (CanProcessInput())
         {
@@ -197,7 +197,7 @@ public class PlayerInputHandler : MonoBehaviour
         return 0;
     }
 
-    float GetMouseOrStickLookAxis(string mouseInputName, string stickInputName)
+    public virtual float GetMouseOrStickLookAxis(string mouseInputName, string stickInputName)
     {
         if (CanProcessInput())
         {

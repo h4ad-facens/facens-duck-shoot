@@ -297,7 +297,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void SetNavDestination(Vector3 destination)
+    public virtual void SetNavDestination(Vector3 destination)
     {
         if (m_NavMeshAgent)
         {
