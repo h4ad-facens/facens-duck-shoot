@@ -13,7 +13,9 @@ public class Compass : MonoBehaviour
 
     public GameObject MarkerDirectionPrefab;
 
-    Transform m_PlayerTransform;
+    public Camera PlayerCamera;
+    
+    Transform m_CompassLookReferenceTransform;
     Dictionary<Transform, CompassMarker> m_ElementsDictionnary = new Dictionary<Transform, CompassMarker>();
 
     float m_WidthMultiplier;
@@ -23,7 +25,7 @@ public class Compass : MonoBehaviour
     {
         PlayerCharacterController playerCharacterController = FindObjectOfType<PlayerCharacterController>();
         DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, Compass>(playerCharacterController, this);
-        m_PlayerTransform = playerCharacterController.transform;
+        m_CompassLookReferenceTransform = PlayerCamera.transform;
 
         m_WidthMultiplier = compasRect.rect.width / visibilityAngle;
         m_heightOffset = -compasRect.rect.height / 2;
@@ -40,16 +42,16 @@ public class Compass : MonoBehaviour
 
             if (element.Value.isDirection)
             {
-                angle = Vector3.SignedAngle(m_PlayerTransform.forward, element.Key.transform.localPosition.normalized, Vector3.up);
+                angle = Vector3.SignedAngle(m_CompassLookReferenceTransform.forward, element.Key.transform.localPosition.normalized, Vector3.up);
             }
             else
             {
-                Vector3 targetDir = (element.Key.transform.position - m_PlayerTransform.position).normalized;
+                Vector3 targetDir = (element.Key.transform.position - m_CompassLookReferenceTransform.position).normalized;
                 targetDir = Vector3.ProjectOnPlane(targetDir, Vector3.up);
-                Vector3 playerForward = Vector3.ProjectOnPlane(m_PlayerTransform.forward, Vector3.up);
+                Vector3 playerForward = Vector3.ProjectOnPlane(m_CompassLookReferenceTransform.forward, Vector3.up);
                 angle = Vector3.SignedAngle(playerForward, targetDir, Vector3.up);
 
-                Vector3 directionVector = element.Key.transform.position - m_PlayerTransform.position;
+                Vector3 directionVector = element.Key.transform.position - m_CompassLookReferenceTransform.position;
 
                 heightDifference = (directionVector.y) * heightDifferenceMultiplier;
                 heightDifference = Mathf.Clamp(heightDifference, -compasRect.rect.height / 2 * compasMarginRatio, compasRect.rect.height / 2 * compasMarginRatio);

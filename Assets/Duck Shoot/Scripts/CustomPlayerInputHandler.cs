@@ -15,7 +15,7 @@ namespace Duck_Shoot
 
         void Update()
         {
-            if (weaponRotation != null) 
+            if (weaponRotation != null)
                 weaponRotation.transform.rotation = playerCamera.transform.rotation;
         }
 
@@ -89,7 +89,7 @@ namespace Duck_Shoot
         {
             return Vector3.zero;
         }
-        
+
         #endregion
     }
 }

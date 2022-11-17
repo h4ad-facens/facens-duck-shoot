@@ -233,7 +233,7 @@ public class PlayerCharacterController : MonoBehaviour
         }
     }
 
-    void HandleCharacterMovement()
+    public virtual void HandleCharacterMovement()
     {
         // horizontal character rotation
         {

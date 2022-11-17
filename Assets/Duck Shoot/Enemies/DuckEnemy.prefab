@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7558070658119201474}
   - component: {fileID: 4211612267707640903}
   - component: {fileID: 2811793439950059414}
-  - component: {fileID: 3069776829046460224}
   - component: {fileID: 3069776829046460231}
   m_Layer: 0
   m_Name: DuckEnemy
@@ -31,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3069776829046460225}
-  m_LocalRotation: {x: -0.49991274, y: -0.50008726, z: -0.49991274, w: 0.50008726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.171, y: 1.616, z: 2.078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -43,7 +42,7 @@ Transform:
   - {fileID: 3495993769310900253}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -89.98, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7568436637989833636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,18 +221,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3069776829046460224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3069776829046460225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f903ae23bfa5e4c9b2a28b3f0a298b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3069776829046460231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,7 +926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7529738929389415949}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.43, y: 0.37, z: 0.55}
+  m_LocalPosition: {x: 0, y: 0.37, z: 0.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3069776829046460237}
@@ -1045,7 +1032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9013814860435073085}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.315, y: -0.085, z: 1.094}
+  m_LocalPosition: {x: 0, y: -0.085, z: 1.094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1409006657625456042}
@@ -1081,7 +1068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405194, guid: 325beb5088b92ec4786c0a2e5965c008, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.406
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 405194, guid: 325beb5088b92ec4786c0a2e5965c008, type: 3}
       propertyPath: m_LocalPosition.y
